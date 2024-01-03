@@ -24,7 +24,7 @@ bool HackathonBot::isHolding(){
 }
 
 void HackathonBot::takeAction(float price){
-    
+    // update up/down window counter    
     if (price > this->prices.back()){
         this->upWindows++;
         this->downWindows = 0;
@@ -60,11 +60,13 @@ void HackathonBot::takeAction(float price){
     this->prices.push_back(price);
 }
 
+// calculate percentage change, positive for increase, negative for decrease
 double HackathonBot::percentageChange(double a, double b){
     
     return (b-a)/a * 100;
 }
 
+// check 3 window series sell condition 1
 bool HackathonBot::checkSeriesConditionOne(double currPrice){
 
     if (prices.size() >= 3 &&
@@ -77,6 +79,7 @@ bool HackathonBot::checkSeriesConditionOne(double currPrice){
     return false;
 }
 
+// check 3 window series sell condition 2
 bool HackathonBot::checkSeriesConditionTwo(double currPrice){
     
     if (prices.size() >= 3 &&
