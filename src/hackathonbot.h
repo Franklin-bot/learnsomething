@@ -17,7 +17,7 @@ public:
     double percentageChange(double a, double b);
     bool checkSeriesConditionOne(double currPrice);
     bool checkSeriesConditionTwo(double currPrice);
-    
+
 private:
     double balance;
     bool holding;

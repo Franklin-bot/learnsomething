@@ -6,12 +6,13 @@
 #include <vector>
 
 HackathonBot::HackathonBot(){
-    this->balance = 100;
-    this->holding = false;
+    this->balance = 0;
+    this->holding = true;
     this->upWindows = 0;
     this->downWindows = 0;
-    this->purchasePrice = 0;
+    this->purchasePrice = 100;
     this->flatWindows = 0;
+    this->prices.push_back(100);
 }
 
 double HackathonBot::getBalance(){
