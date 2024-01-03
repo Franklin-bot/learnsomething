@@ -14,9 +14,19 @@ public:
     void takeAction(float price);
     double getBalance();
     bool isHolding();
+    double percentageChange(double a, double b);
+    bool checkSeriesConditionOne(double currPrice);
+    bool checkSeriesConditionTwo(double currPrice);
+
 private:
     double balance;
     bool holding;
+    int upWindows;
+    int downWindows;
+    int totalWindows;
+    int flatWindows;
+    double purchasePrice;
+    std::vector<double> prices;
 };
 
 #endif //LEARNSOMETHING_HACKATHONBOT_H
